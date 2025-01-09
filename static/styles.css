@@ -1,0 +1,118 @@
+/* Genel sayfa düzeni */
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Konteyner düzeni */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Başlık düzeni */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form düzeni */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #f0f8ff;
+}
+
+/* Buton düzeni */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Hata mesajı */
+.error-message {
+    color: #ff6347;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Grafik düzeni */
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Footer düzeni */
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
