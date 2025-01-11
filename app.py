@@ -1,5 +1,5 @@
 from flask import Flask
-from .routes import app_routes  # routes dosyasındaki app_routes'u import ediyoruz
+from routes import app_routes  # routes dosyasındaki app_routes'u import ediyoruz
 from jinja2 import Environment
 
 def create_app():

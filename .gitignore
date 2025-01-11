@@ -1,5 +1,2 @@
-/venv/etc
-/venv/Include
-/venv/Lib
-/venv/Scripts
-/venv/share
+/venv
+/__pycache__
