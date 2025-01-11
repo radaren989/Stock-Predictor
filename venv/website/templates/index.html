@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="POST" class="form-container">
     <div class="form-group">
         <label for="company_name">Enter Company Name</label>
         <input type="text" id="company_name" name="company_name" class="form-control" placeholder="Enter company name" required>
@@ -8,66 +8,52 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
 {% if company_name %}
-    <h3 class="text-center">Stock Price for {{ company_name }}</h3>
+    <h2 class="section-title text-center">Stock Price for {{ company_name }}</h2>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Historical Data & Visualization</h3>
+    <div class="charts-container">
+        <!-- Closing Prices Over Time Chart -->
+        <div class="chart">
+            <h4>Closing Prices Over Time</h4>
+            <img src="{{ url_for('static', filename='plots/closing_prices.png') }}" alt="Stock Price Chart">
+        </div>
 
-            <!-- Closing Prices Over Time Chart -->
-            <div class="chart">
-                <h4>Closing Prices Over Time</h4>
-                <img src="{{ url_for('static', filename='plots/closing_prices.png') }}"
-                     alt="Stock Price Chart" class="img-fluid">
-            </div>
+        <!-- Candlestick Chart -->
+        <div class="chart">
+            <h4>Candlestick Chart</h4>
+            <img src="{{ url_for('static', filename='plots/candlestick_chart.png') }}" alt="Candlestick Chart">
+        </div>
 
-            <!-- Candlestick Chart -->
-            <div class="chart">
-                <h4>Candlestick Chart</h4>
-                <img src="{{ url_for('static', filename='plots/candlestick_chart.png') }}"
-                     alt="Candlestick Chart" class="img-fluid">
-            </div>
+        <!-- Closing Prices and Moving Average Chart -->
+        <div class="chart">
+            <h4>Closing Prices and Moving Average</h4>
+            <img src="{{ url_for('static', filename='plots/moving_average.png') }}" alt="Moving Average">
+        </div>
 
-            <!-- Closing Prices and Moving Average Chart -->
-            <div class="chart">
-                <h4>Closing Prices and Moving Average</h4>
-                <img src="{{ url_for('static', filename='plots/moving_average.png') }}"
-                     alt="Moving Average" class="img-fluid">
-            </div>
+        <!-- Monthly Seasonality Chart -->
+        <div class="chart">
+            <h4>Monthly Seasonality of {{ company_name }}</h4>
+            <img src="{{ url_for('static', filename='plots/monthly_seasonality.png') }}" alt="Monthly Seasonality">
+        </div>
 
-            <!-- Monthly Seasonality Chart -->
-            <div class="chart">
-                <h4>Monthly Seasonality of {{ company_name }}</h4>
-                <img src="{{ url_for('static', filename='plots/monthly_seasonality.png') }}"
-                     alt="Monthly Seasonality" class="img-fluid">
-            </div>
+        <!-- Predicted vs Actual Prices -->
+        <div class="chart">
+            <h4>Predicted vs Actual Prices</h4>
+            <img src="{{ url_for('static', filename='plots/predicted_vs_actual_prices.png') }}" alt="Predicted vs Actual Prices">
+        </div>
 
-            <!-- Predicted vs Actual Prices -->
-            <div class="chart">
-                <h4>Predicted vs Actual Prices</h4>
-                <img src="{{ url_for('static', filename='plots/predicted_vs_actual_prices.png') }}"
-                     alt="Predicted vs Actual Prices" class="img-fluid">
-            </div>
-
-            <!-- Predicted Next 10 Days -->
-            <div class="chart">
-                <h4>Predicted Stock Price for Next 10 Days</h4>
-                <img src="{{ url_for('static', filename='plots/predicted_next_10_days.png') }}"
-                     alt="Predicted Next 10 Days" class="img-fluid">
-            </div>
+        <!-- Predicted Next 10 Days -->
+        <div class="chart">
+            <h4>Predicted Stock Price for Next 10 Days</h4>
+            <img src="{{ url_for('static', filename='plots/predicted_next_10_days.png') }}" alt="Predicted Next 10 Days">
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Predictions for the Next 10 Days</h3>
-            <div class="predictions">
-                {% if future_predictions %}
-                    <pre>{{ future_predictions }}</pre>
-                {% else %}
-                    <p>No predictions available at the moment.</p>
-                {% endif %}
-            </div>
-        </div>
+    <div class="predictions-section">
+        <h3>Predictions for the Next 10 Days</h3>
+        {% if future_predictions %}
+            <pre>{{ future_predictions }}</pre>
+        {% else %}
+            <p>No predictions available at the moment.</p>
+        {% endif %}
     </div>
 {% endif %}
